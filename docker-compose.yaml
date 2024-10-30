@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  caddy:
+    image: caddy-intermediate-space-issue
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./website:/usr/share/caddy
+      - ./logs:/var/log/caddy
+    storage_opt:
+      size: 100M
