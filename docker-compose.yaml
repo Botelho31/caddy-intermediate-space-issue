@@ -1,10 +1,11 @@
 version: '3.7'
 services:
   caddy:
-    image: caddy-intermediate-space-issue
+    build: .
     ports:
       - "80:80"
       - "443:443"
+      - "2019:2019"
     volumes:
       - ./website:/usr/share/caddy
       - ./logs:/var/log/caddy
