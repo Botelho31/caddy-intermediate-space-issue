@@ -9,5 +9,7 @@ services:
     volumes:
       - ./website:/usr/share/caddy
       - ./logs:/var/log/caddy
-    storage_opt:
-      size: 100M
+      - target: /data
+        tmpfs:
+          size: 12000
+        type: tmpfs
